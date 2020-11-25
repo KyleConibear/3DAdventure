@@ -13,13 +13,15 @@ public class Character : MonoBehaviour
 
     [Range(5, 25)]
     [SerializeField] private float rotateSpeed = 5;
+
+
     protected void Move(Vector3 direction)
     {
-        this.rigidbody.velocity = this.transform.TransformDirection(direction) * this.baseForce;
+        Vector3 targetDir = this.transform.TransformDirection(direction) * this.baseForce;
+        this.rigidbody.velocity = new Vector3(targetDir.x, this.rigidbody.velocity.y, targetDir.z);
         this.animator.SetFloat("xVel", direction.x);
         this.animator.SetFloat("zVel", direction.z);
     }
-
     protected void Rotate(float direction)
     {
         this.transform.Rotate(Vector3.up * direction * rotateSpeed);
