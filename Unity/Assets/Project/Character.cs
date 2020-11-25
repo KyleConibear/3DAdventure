@@ -11,10 +11,17 @@ public class Character : MonoBehaviour
     [Range(5, 25)]
     [SerializeField] private float baseForce = 6;
 
+    [Range(5, 25)]
+    [SerializeField] private float rotateSpeed = 5;
     protected void Move(Vector3 direction)
     {
-        this.rigidbody.velocity = direction * this.baseForce;
+        this.rigidbody.AddRelativeForce(direction * this.baseForce);
         this.animator.SetFloat("xVel", direction.x);
         this.animator.SetFloat("zVel", direction.z);
+    }
+
+    protected void Rotate(float direction)
+    {
+        this.transform.Rotate(Vector3.up * direction * rotateSpeed);
     }
 }

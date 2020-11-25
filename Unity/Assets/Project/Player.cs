@@ -8,4 +8,9 @@ public class Player : Character
     {
         base.Move(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")));
     }
+
+    private void Update()
+    {
+        base.Rotate(Input.GetAxis("Mouse X"));
+    }
 }
