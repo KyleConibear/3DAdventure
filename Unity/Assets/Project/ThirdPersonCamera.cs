@@ -11,16 +11,28 @@ public class ThirdPersonCamera : MonoBehaviour
         public float Damping;
     }
 
+    [SerializeField] private bool isCursorLocked;
+
     [SerializeField] private CameraRig movingStandCamera;
 
     [SerializeField] private Transform cameraLookTarget;
     [SerializeField] private Player localPlayer;
     private CameraRig cameraRig;
 
+    private void Awake()
+    {
+        if (isCursorLocked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
     private void LateUpdate()
     {
-
-        //Debug.Log("movingStandCamera");
         cameraRig = movingStandCamera;
 
 
