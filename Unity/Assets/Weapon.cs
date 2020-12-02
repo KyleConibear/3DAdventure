@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] private GameObject m_Projectile = null;
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void Shoot()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Instantiate(m_Projectile, this.transform.position, this.transform.rotation);
     }
 }

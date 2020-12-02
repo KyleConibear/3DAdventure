@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public abstract class Character : MonoBehaviour
 {
     [SerializeField] private Animator animator = null;
 
@@ -26,4 +26,6 @@ public class Character : MonoBehaviour
     {
         this.transform.Rotate(Vector3.up * direction * rotateSpeed);
     }
+
+    protected abstract void Shoot();
 }
