@@ -7,8 +7,8 @@ public class ThirdPersonCamera : MonoBehaviour
     [System.Serializable]
     public class CameraRig
     {
-        public Vector3 CameraOffSet;
-        public float Damping;
+        public Vector3 CameraOffSet = new Vector3(0, 2,-8);
+        public float Damping = 2;
     }
 
     [SerializeField] private bool isCursorLocked;

@@ -728,10 +728,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14144923455e8cf4f88c0cf13c581e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCursorLocked: 0
+  isCursorLocked: 1
   movingStandCamera:
     CameraOffSet: {x: 0, y: 2, z: -8}
-    Damping: 3
+    Damping: 2
   cameraLookTarget: {fileID: 1848851612}
   localPlayer: {fileID: 1753330695}
 --- !u!1 &1342544963
