@@ -8,7 +8,8 @@ public class ThirdPersonCamera : MonoBehaviour
     public class CameraRig
     {
         public Vector3 CameraOffSet = new Vector3(0, 2,-8);
-        public float Damping = 2;
+        public float rotationSpeed = 1;
+        public float followSpeed = 5;
     }
 
     [SerializeField] private bool isCursorLocked;
@@ -42,7 +43,7 @@ public class ThirdPersonCamera : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.LookRotation(cameraLookTarget.position - targetPosition, Vector3.up);
 
-        transform.position = Vector3.Lerp(transform.position, targetPosition, cameraRig.Damping * Time.deltaTime);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, cameraRig.Damping * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, targetPosition, cameraRig.followSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, cameraRig.rotationSpeed * Time.deltaTime);
     }
 }

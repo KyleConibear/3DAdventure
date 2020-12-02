@@ -11,8 +11,8 @@ public class Character : MonoBehaviour
     [Range(5, 25)]
     [SerializeField] private float baseForce = 6;
 
-    [Range(5, 25)]
-    [SerializeField] private float rotateSpeed = 5;
+    [Range(1, 5)]
+    [SerializeField] private float rotateSpeed = 3;
 
 
     protected void Move(Vector3 direction)
